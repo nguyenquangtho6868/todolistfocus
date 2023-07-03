@@ -1,0 +1,9 @@
+.tomorrow {
+  height: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.tomorrow:hover {
+  background-color: #85957b;
+}

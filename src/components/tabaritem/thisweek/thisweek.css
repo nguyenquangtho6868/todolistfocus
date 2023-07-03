@@ -1,0 +1,9 @@
+.thisweek {
+  height: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.thisweek:hover {
+  background-color: #85957b;
+}
