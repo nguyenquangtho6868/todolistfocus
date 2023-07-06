@@ -9,7 +9,7 @@ function Tomorrow() {
   };
   return (
     <div className="tomorrow" onMouseEnter={handleFocus}>
-      Tỏmoww
+      Tomorrow
     </div>
   );
 }

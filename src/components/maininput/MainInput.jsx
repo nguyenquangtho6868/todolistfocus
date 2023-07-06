@@ -43,13 +43,30 @@ function MainInput({ handleMission }) {
   };
 
   const sendDataToParent = () => {
-    const data = { input: inputData, clock: clock * 25 };
+    const data = { input: inputData, clock: new Array(clock).fill(0) };
     handleMission(data);
+
     setInputData("");
+    setClock(0);
   };
+  console.log(inputData);
+  const flag =
+    inputData !== "" ? (
+      <button
+        onClick={sendDataToParent}
+        style={{ backgroundColor: "yellowgreen" }}
+      >
+        Nhấn để thêm
+      </button>
+    ) : (
+      <button disabled onClick={sendDataToParent}>
+        Nhấn để thêm
+      </button>
+    );
+  console.log(flag);
   return (
     <div className="maininput">
-      <button onClick={sendDataToParent}>+</button>
+      {flag}
       <input
         value={inputData}
         onChange={handlSubmit}
