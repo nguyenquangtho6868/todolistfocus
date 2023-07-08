@@ -24,9 +24,10 @@ function Main() {
     });
     localStorage.setItem("missionToday", JSON.stringify(today));
   };
-  const handleMissionCheck = (c) => {
+  const handleMissionCheck = (c, key, m) => {
+    console.log(key);
+    console.log(m);
     setMission(c);
-    console.log(c);
   };
   const handleCompleted = (m) => {
     let arr = [...completed];

@@ -6,10 +6,10 @@ function MainWork({ mission, check, handleCompleted }) {
   // console.log(mission);
   const checkBox = (m) => {
     handleCompleted(m);
+
     const a = mission.filter((check) => check !== m);
 
-    console.log(a);
-    check(a);
+    check(a, m.key, m);
   };
 
   const render = mission.map((m, index) => {

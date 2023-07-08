@@ -7,12 +7,17 @@ function MainToday() {
   const dataMission = localStorage.getItem("missionToday")
     ? JSON.parse(localStorage.getItem("missionToday"))
     : [];
-  console.log(dataMission);
+  const dataCompleted = localStorage.getItem("completed")
+    ? JSON.parse(localStorage.getItem("completed"))
+    : [];
   const [mission, setMission] = useState(dataMission);
-  const [completed, setCompleted] = useState([]);
+  const [completed, setCompleted] = useState(dataCompleted);
   const handleMission = (m) => {
     let arr = [...mission];
-    arr.push(m);
+    const b = { ...m, key: "today" };
+
+    arr.push(b);
+
     console.log(arr);
     setMission(arr);
     localStorage.setItem("missionToday", JSON.stringify(arr));

@@ -11,7 +11,8 @@ function MainTomorrow() {
   const [completed, setCompleted] = useState([]);
   const handleMission = (m) => {
     let arr = [...mission];
-    arr.push(m);
+    const b = { ...m, key: "tomorrow" };
+    arr.push(b);
     console.log(arr);
     setMission(arr);
     localStorage.setItem("missionTomorrow", JSON.stringify(arr));
@@ -27,6 +28,7 @@ function MainTomorrow() {
     arr.push(m);
     console.log(arr);
     setCompleted(arr);
+    localStorage.setItem("completed", JSON.stringify(arr));
   };
   console.log(completed);
   return (
