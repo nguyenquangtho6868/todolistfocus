@@ -9,8 +9,8 @@ function Completed() {
   const [data, setData] = useState(dataCompleted);
   const handleCompleted = (m) => {
     console.log(m);
-    setData(data.filter((check) => check !== m));
-    localStorage.setItem("completed", JSON.stringify(data));
+    setData(m);
+    localStorage.setItem("completed", JSON.stringify(m));
   };
   return (
     <div>
