@@ -49,6 +49,7 @@ function Main() {
     arr.push(m);
     console.log(arr);
     setCompleted(arr);
+    localStorage.setItem("completed", JSON.stringify(arr));
   };
   console.log(completed);
   return (
