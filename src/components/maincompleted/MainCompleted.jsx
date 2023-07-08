@@ -1,16 +1,20 @@
 import React from "react";
-import MainAlert from "../mainalert/MainAlert";
-import MainInput from "../maininput/MainInput";
-import MainWork from "../mainwork/MainWork";
 import { useState } from "react";
+import MainWorkCompleted from "../mainwork/MainWorkCompletded";
+
 function Completed() {
   const dataCompleted = localStorage.getItem("completed")
     ? JSON.parse(localStorage.getItem("completed"))
     : [];
-
+  const [data, setData] = useState(dataCompleted);
+  const handleCompleted = (m) => {
+    console.log(m);
+    setData(data.filter((check) => check !== m));
+    localStorage.setItem("completed", JSON.stringify(data));
+  };
   return (
     <div>
-      <MainWork mission={dataCompleted} />
+      <MainWorkCompleted mission={data} handleCompleted={handleCompleted} />
     </div>
   );
 }
