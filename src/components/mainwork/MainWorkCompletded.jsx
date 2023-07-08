@@ -31,7 +31,6 @@ function MainWorkCompleted({ mission, check, handleCompleted }) {
   });
   return (
     <div>
-      <p>Không ưu Tiên 25</p>
       <div className="mainwork">{render}</div>
     </div>
   );
