@@ -24,10 +24,23 @@ function Main() {
     });
     localStorage.setItem("missionToday", JSON.stringify(today));
   };
-  const handleMissionCheck = (c, key, m) => {
-    console.log(key);
+  const handleMissionCheck = (a, key, m) => {
+    setMission(a);
+    console.log({ a });
+    if (key === "today") {
+      const today = a.filter((element) => {
+        return !dataMissionTomorrow.includes(element);
+      });
+
+      localStorage.setItem("missionToday", JSON.stringify(today));
+    } else {
+      const tomoro = a.filter((element) => {
+        return !dataMissionToday.includes(element);
+      });
+      console.log(tomoro);
+      localStorage.setItem("missionTomorrow", JSON.stringify(tomoro));
+    }
     console.log(m);
-    setMission(c);
   };
   const handleCompleted = (m) => {
     let arr = [...completed];
