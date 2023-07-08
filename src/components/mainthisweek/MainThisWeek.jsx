@@ -16,7 +16,9 @@ function Main() {
   const [completed, setCompleted] = useState([]);
   const handleMission = (m) => {
     let arr = [...mission];
-    arr.push(m);
+    const b = { ...m, key: "today" };
+
+    arr.push(b);
     console.log(arr);
     setMission(arr);
     const today = arr.filter((element) => {
